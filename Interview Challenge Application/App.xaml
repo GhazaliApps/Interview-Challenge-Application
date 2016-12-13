@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Interview_Challenge_Application.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Interview_Challenge_Application"
+    RequestedTheme="Light">
+
+</Application>
