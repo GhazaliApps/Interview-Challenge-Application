@@ -47,16 +47,29 @@ namespace Interview_Challenge_Application.Views
                 getRestaurantData(MSelectedRestaurant.Title);
                 if (fsSelectedRestaurant != null)
                 {
-                    Rname.Text = fsSelectedRestaurant.name;
-                    Rphone.Text = fsSelectedRestaurant.contact.formattedPhone.ToString();
-                    Raddress.Text = fsSelectedRestaurant.location.address.ToString();
+                    if (fsSelectedRestaurant.name != null)
+                        Rname.Text = fsSelectedRestaurant.name;
+                    if (fsSelectedRestaurant.contact.formattedPhone != null)
+                        Rphone.Text = fsSelectedRestaurant.contact.formattedPhone.ToString();
+                    if (fsSelectedRestaurant.location.address != null)
+                        Raddress.Text = fsSelectedRestaurant.location.address.ToString();
+                    if (fsSelectedRestaurant.venueRatingBlacklisted != false)
+                        Rrating.Text = "Good Reviews";
+                    else Rrating.Text = "Bad Reviews";
                 }
                 else
                 {
                     GoogleRestaurantDetailsRoot GrestaurantDetails = await GetRestaurantsDetailsFromGoogle(gSelectedRestaurant.place_id);
+                    if(GrestaurantDetails.result.name!=null)
                     Rname.Text = GrestaurantDetails.result.name;
+                    if(GrestaurantDetails.result.formatted_phone_number!=null)
                     Rphone.Text = GrestaurantDetails.result.formatted_phone_number;
+                    if(GrestaurantDetails.result.formatted_phone_number!=null)
                     Raddress.Text = GrestaurantDetails.result.formatted_address;
+                    if (GrestaurantDetails.result.rating != 0)
+                        Rrating.Text = "Good Reviews";
+                    else Rrating.Text = "Bad Reviews";
+
                 }
 
             }

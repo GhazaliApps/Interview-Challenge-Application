@@ -11,9 +11,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
-
         </Grid.RowDefinitions>
-
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Image Source="/Assets/restaurant.png" Margin="5"></Image>
             <TextBlock 
@@ -27,17 +25,15 @@
         <StackPanel Grid.Row="1">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock 
-                                   FontWeight="Bold"
-                                   Text="Title : " 
-                                    Margin="5"
-                                    TextAlignment="Center"
-                                    FontSize="20"/>
-                <TextBlock Name="Rname" 
+                    FontWeight="Bold"
+                    Text="Title : " 
+                    Margin="5"
+                    TextAlignment="Center"
+                    FontSize="20"/>
+                    <TextBlock Name="Rname" 
                            Margin="5"
                            FontSize="20"
                            TextWrapping="Wrap"/>
-
-
             </StackPanel>
             <StackPanel  Orientation="Horizontal" Margin="5">
                 <TextBlock  Text="Phone :" FontWeight="Bold" Margin="5" TextAlignment="Center" FontSize="20" ></TextBlock>
