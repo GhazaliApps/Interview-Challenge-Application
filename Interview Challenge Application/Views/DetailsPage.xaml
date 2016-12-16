@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="Interview_Challenge_Application.Views.DetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Interview_Challenge_Application.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Image Source="/Assets/restaurant.png" Margin="5"></Image>
+            <TextBlock 
+                FontWeight="Bold"
+                Text="Restaurant Details" 
+                VerticalAlignment="Center"
+                Margin="5"
+                TextAlignment="Center"
+                FontSize="25"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock 
+                                   FontWeight="Bold"
+                                   Text="Title : " 
+                                    Margin="5"
+                                    TextAlignment="Center"
+                                    FontSize="20"/>
+                <TextBlock Name="Rname" 
+                           Margin="5"
+                           FontSize="20"
+                           TextWrapping="Wrap"/>
+
+
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Margin="5">
+                <TextBlock  Text="Phone :" FontWeight="Bold" Margin="5" TextAlignment="Center" FontSize="20" ></TextBlock>
+                <TextBlock Name="Rphone" Text="No Phone is Available" FontSize="20" Margin="5" TextWrapping="Wrap" Tapped="Rphone_Tapped" ></TextBlock>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Margin="5">
+                <TextBlock  Text="Category :" FontWeight="Bold" Margin="5" TextAlignment="Center" FontSize="20" ></TextBlock>
+                <TextBlock Text="Food - Restaurants" FontSize="20" Margin="5" TextWrapping="Wrap" Tapped="Rphone_Tapped" ></TextBlock>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" Margin="5">
+                <TextBlock  Text="Rating :" FontWeight="Bold" Margin="5" TextAlignment="Center" FontSize="20" ></TextBlock>
+                <TextBlock Name="Rrating" Text="Not Rated" FontSize="20" Margin="5" TextWrapping="Wrap" Tapped="Rphone_Tapped" ></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Text="Address : " FontWeight="Bold" Margin="5" TextAlignment="Center" FontSize="20" ></TextBlock>
+                <TextBlock Name="Raddress" Text="No Address is Available" FontSize="20" Margin="5" TextWrapping="Wrap" Tapped="Raddress_Tapped" ></TextBlock>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Page>

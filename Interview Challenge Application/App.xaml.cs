@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interview_Challenge_Application.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,14 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using System.Net.Http;
+using Windows.Devices.Geolocation;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using Interview_Challenge_Application.Helper;
+using Interview_Challenge_Application.Views;
 
 namespace Interview_Challenge_Application
 {
@@ -26,6 +35,8 @@ namespace Interview_Challenge_Application
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
+        /// 
+        public static GlobalModel Model { get; set; }
         public App()
         {
             this.InitializeComponent();
@@ -37,14 +48,10 @@ namespace Interview_Challenge_Application
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
+        /// 
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
+            Model = new GlobalModel();
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -78,13 +85,12 @@ namespace Interview_Challenge_Application
                 Window.Current.Activate();
             }
         }
-
-        /// <summary>
-        /// Invoked when Navigation to a certain page fails
-        /// </summary>
-        /// <param name="sender">The Frame which failed navigation</param>
-        /// <param name="e">Details about the navigation failure</param>
-        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+    /// <summary>
+    /// Invoked when Navigation to a certain page fails
+    /// </summary>
+    /// <param name="sender">The Frame which failed navigation</param>
+    /// <param name="e">Details about the navigation failure</param>
+    void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
